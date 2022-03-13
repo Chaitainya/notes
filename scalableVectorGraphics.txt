@@ -1,0 +1,26 @@
+How to create an SVG?
+1. By handing coding
+2. Popular vector image editors like Inkscape, Adobe Illustrator and Sketch
+
+When we use SVG?
+LOGOS, ICONS, ANIMATIONS, ILLUSTRATIONS and CHARTS AND GRAPHS.
+
+How to use SVG?
+<img>, <embed>, <object>, <iframe>, <svg>
+
+Three ways to Animate an SVG?
+CSS, SMIL, Javascript
+
+Animating SVG with SMIL?
+<animate>, <animateMotion>, <animateTransform>, <set>
+
+Javascript animation libraries?
+http://snapsvg.io/
+https://maxwellito.github.io/vivus/
+https://d3js.org/
+
+Online SVG editors?
+Vecteezy
+Method Draw Vector Editor
+Vecta
+
