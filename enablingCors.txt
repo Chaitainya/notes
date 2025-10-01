@@ -1,0 +1,8 @@
+// Enable CORS manually
+res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+if your angular server is running on 4200 and node server is running on 3000. Cors error will be thrown.
+to avoid that use above lines
