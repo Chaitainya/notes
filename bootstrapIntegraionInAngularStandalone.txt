@@ -1,0 +1,32 @@
+How to integrate bootstrap?
+npm install bootstrap
+npm install @popperjs/core
+
+add this in angular.js
+"styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/styles.css"
+],
+"scripts": [
+  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+]
+
+{
+  "projects": {
+    "testProject": {
+      "architect": {
+        "build": {
+          "options": {
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
