@@ -1,0 +1,58 @@
+***How to integrate tailwind in angular (standalone)***
+
+Install Tailwind + PostCSS
+[COMMAND]
+npm install -D tailwindcss postcss autoprefixer
+
+Init Tailwind Config
+[COMMAND]
+npx tailwindcss init (This creates tailwind.config.js at project root.)
+
+Configure Tailwind
+Edit tailwind.config.js:
+[CODE]
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,ts}",   // ✅ standalone components included
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+Add PostCSS Config
+Create a new file at project root:
+postcss.config.js
+[CODE]
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+
+Add Tailwind Directives
+Open src/styles.css (or styles.scss) and add:
+[CODE]
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Check angular.json
+Ensure Angular is actually loading your global styles:
+[CHECK]
+"styles": [
+  "src/styles.css"
+],
+
+Run Angular
+[COMMAND]
+ng serve
+
+Add this in HTML
+[CODE]
+<h1 class="text-4xl font-bold text-purple-600">
+  🚀 Tailwind works in Angular 17 standalone!
+</h1>
