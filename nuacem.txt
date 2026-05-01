@@ -1,0 +1,235 @@
+ANGULAR
+"local": "ng serve --host 0.0.0.0 --port 3030 --disable-host-check --configuration=local",
+
+<--- JS stacktrace --->
+FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
+"local": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve --port 3030 --configuration=local",
+node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve
+export NODE_OPTIONS="--max-old-space-size=5120"
+
+sh ../rs.sh
+
+node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve --host 0.0.0.0 --port 3030 --disable-host-check --configuration=local
+
+ADNAN
+ssh -R chaitanya:80:localhost:6003 serveo.net
+
+UBUNTU
+
+Kill Port Installation
+npm i kill-port
+npm install --global kill-port
+yarn global add kill-port
+
+# Kill a single port
+npx kill-port --port 3030
+npx-kill port 3030
+
+# Use UDP
+npx kill-port 5002 --method udp
+
+# Kill multiple ports
+npx kill-port --port 3030,5000,5002
+npx kill-port 3030 5000 5002
+
+lsof -i tcp:3030	
+kill -9 PID
+
+GIT
+rm /home/chay/Propflo/prop-web-client-admin/.git/index.lock
+git add .
+git commit -m "commit message"
+git add . && git commit -m "commit message"
+git commit -am "commit message"
+git branch --show-current
+git push --set-upstream origin <branch name>
+git push --set-upstream origin $(git branch --show-current)
+git revert <commit no>
+git branch
+git branch | grep <part of branch name>
+git checkout -b "new branch name"
+git branch -m old-name new-name
+git branch -D "branch name to delete"
+
+git reset HEAD~1 [Undo the last commit but keep changes]
+git reset --hard HEAD~1 [Undo the last commit and remove changes]
+git reflog
+git reset --hard efgh456
+
+git pull --rebase origin branchName
+git rebase --continue
+git rebase --abort
+git pull --no-rebase
+# or simply:
+git pull --no-rebase origin <your-branch-name>
+
+git stash list
+git reset --hard
+git stash drop stash@{n}
+git stash pop
+git stash apply
+
+if already pushed:::: git revert <commit-id>
+if not pushed but committed in locally:::: 	git reset HEAD~1
+
+git fetch --all (
+This downloads all remote updates (for all branches, tags, etc.) but doesn’t merge anything into your working branches.
+It just syncs your local view of the remote (origin/<branch>).
+
+Then you can rebase or merge specific branches if needed.
+)
+
+git config --global --list
+git config --global user.name
+git config --global user.email
+
+JUST FOR REFERENCE
+for branch in $(git branch --format='%(refname:short)'); do
+  git checkout $branch
+  git pull --rebase
+done
+
+git remote update --prune (This updates all remote tracking branches and removes deleted ones.
+Very safe to run regularly.)
+
+2004@CharomanilGopinatha@2024
+
+JIRA Credentials
+propflo-devsales@bentolabs.io
+W3lc0m3@b3nt0_PFSales
+
+ng version --> To check the version but not the core version
+npm list @angular/core --> To check the core version
+@angular/core@14.3.0 --> Core version of this current computer
+npm info @angular/core version --> This will display the latest published version of Angular.
+
+a.trim().split(/\s+/).join(" ");
+trim() removes leading and trailing spaces.
+split(/\s+/) splits the string by one or more whitespace characters.
+join(" ") joins the words with a single space.
+
+gh auth login
+password
+BITBUCKET_PASS
+
+To set environment variable
+export BITBUCKET_PASS=""
+
+curl -u "Chaitu8121:$BITBUCKET_PASS" "https://api.bitbucket.org/2.0/workspaces/assetmonk-engineering/members?pagelen=100" | grep "Saichandhra Arvapally"
+
+To raise PR
+curl -X POST -u "Chaitu8121:$BITBUCKET_PASS" \
+  -H "Content-Type: application/json" \
+  "https://api.bitbucket.org/2.0/repositories/assetmonk-engineering/prop-web-client-admin/pullrequests" \
+  -d '{
+    "title": "title:UI issue in invite user fixed",
+    "source": { "branch": { "name": "bugfix/PROP23-5793" } },
+    "destination": { "branch": { "name": "TEST_V2" } },
+    "description": "description:UI issue in invite user fixed",
+    "close_source_branch": false
+  }'
+
+Nuacem
+sudo snap install postman
+rm -rf node_modules package-lock.json
+ng add @angular/material
+ng add @ngrx/store@latest
+ng add @ngrx/effects
+
+"git branch" to list your local branches
+"git branch -r" to list your origin branches
+"git branch -a" to list everything
+
+git add .
+git commit --amend → adds them into the last commit (it will reopen the commit message in your editor, or you can use --no-edit to keep the same message).
+git commit --amend --no-edit
+
+ls -lrt (To get permissions)
+
+sudo chmod g+r/w/x filename.js (Give access)
+sudo chmod g-r/w/x filename.js (Remove access)
+sudo chmod 777 filename.js (full access)
+
+chmod o-w file → remove write for others
+chmod g-w file → remove write for group
+chmod u-w file → remove write for owner
+
+chmod o+w file → add write for others
+chmod g+w file → add write for group
+chmod u+w file → add write for owner
+
+npm uninstall @angular/ssr express
+
+state.users ? [...state.users, ...data.users] : [...data.users]
+OR
+[...(state.users ?? []), ...data.users]
+
+
+grep -R "FE=" ~ 2>/dev/null hacker game	
+
+Image upload clearing
+const input = event?.target as HTMLInputElement | null;
+if (input) {
+  input.value = '';  // Clears the selected file
+}
+
+
+
+1280
+1356
+
+if vim editor:
+1. Click "i" to insert then edit whatever you want.
+2. After editing click "shift + :" then enter wq (write and quit)
+
+{ !! why?
+if (!!data) {
+  // runs only if data is truthy
+}
+
+Truthy examples:
+non-empty string "abc"
+number other than 0
+object {} or []
+true
+
+Falsy examples:
+null
+undefined
+''
+0
+false
+NaN
+}
+
+nmcli -s connection show "NaiAP2_5g" | grep psk
+
+IMAGE DOWNLOAD
+private triggerDownload(downloadUrl: string, fileName: string) {
+const link = document.createElement('a');
+link.href = downloadUrl;
+link.download = fileName;
+link.target = '_blank';
+link.rel = 'noopener';
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+}
+
+git diff > diff.txt
+git diff | wl-copy  (for this you need to install [ubuntu]: sudo apt install wl-clipboard)
+git diff | clip (Windows)
+
+to go back to the previous branch: git checkout -
+
+profile = viewChild<ElementRef>("profile");
+
+@HostListener("window:click", ["$event"])
+onOutsideClick(event: Event) {
+const clickedInside = this.profile()?.nativeElement.contains(event.target);
+
+if (!clickedInside) {
+this.profileDropdown = false;
+}
+}
+
